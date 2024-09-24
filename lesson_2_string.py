@@ -36,3 +36,4 @@ num = 45
 str_var_5 = f'qwerty{num}  + 45'
 print(str_var_5)
 
+
