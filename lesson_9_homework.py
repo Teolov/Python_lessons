@@ -61,13 +61,48 @@ from random import *
 # номер 5
 # Напишите функцию которая принимает список чисел и строк и возвращает список с удалёнными строками
 
-def func(spisok = None):
-    if not spisok:
-        return []
-    elif isinstance(spisok[0], str) :
-        return func(spisok[1:])
-    else:
-        return [spisok[0]] + func(spisok[1:])
+# def func(spisok = None):
+#     if not spisok:
+#         return []
+#     elif isinstance(spisok[0], str) :
+#         return func(spisok[1:])
+#     else:
+#         return [spisok[0]] + func(spisok[1:])
 
-spisok = [ 1, 2, 3, 'b', 'a', 'j']
-print(func(spisok))
+# spisok = [ 1, 2, 3, 'b', 'a', 'j']
+# print(func(spisok))
+
+
+# номер 6
+# написать функцию которая принимает строку и изменять её вставляя после каждого символа строки "^"
+# пример: 
+    # функция принимает "123456" 
+    # функция возвращает "1^2^3^4^5^6"
+
+# def func(stroka = '123'):
+#     for i in stroka:
+#         print(i + '^', end= '')
+    
+# func('123456')
+
+# def func(stroka = '', index = 0):
+#     if index < len(stroka):
+#         print(stroka[index] + '^', end= '')
+#         return func(stroka, index + 1)
+#     else:
+#         return ''
+
+# print(func('123456'))
+
+# номер 7
+# написать функцию которая принимает строку и число ,
+#  функцию возвращает строку умноженную на число нельзя использовать умножение
+
+# def func(stroka = '', num = 0):
+#     if num > 0:
+#         print (stroka, end='')
+#         return func(stroka, num -1)
+#     else: 
+#         return ''
+
+# func('abc', 5)
