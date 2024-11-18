@@ -33,6 +33,7 @@ import random
 # Сделать игру найди кнопку, при нажатии на кнопку она перемещается в случайное место
 # по координатам , но не выходит за границы окна
 
+<<<<<<< HEAD
 # window = Tk()
 # window.title('finder')
 # w, h = 1000, 1000
@@ -67,6 +68,8 @@ import random
 # . Хранение общей выручки магазина;
 # . Ограничить количество товара в магазине
 
+=======
+>>>>>>> e4a800e2b74965f438091e278135c0464a9c78e2
 window = Tk()
 window.title('finder')
 w, h = 1000, 1000
@@ -74,6 +77,7 @@ window.geometry(f"{w}x{h}+{(window.winfo_screenwidth()-w)//2}+{(window.winfo_scr
 window.config(bg = '#355aff')
 window.resizable(False, False)
 
+<<<<<<< HEAD
 spisok = []
 # функция считающая сумму и добавляющая её в лейб
 def summa():
@@ -115,6 +119,22 @@ def b_4():
 button_4= Button(text= 'елка = 500р', command = b_4)
 button_4.place(width = 100, height = 50, x = 360, y = 15)
 
+=======
+def button_move():
+    button.place(x = random.randint(15,885), y = random.randint(15,885))
+    
+
+def random_color():
+    color = f'#{random.randrange(256**3):06x}'
+    button.config(bg = color)
+
+def button_changer():
+    button_move()
+    random_color()
+    
+button= Button(text= 'click on me', command = button_changer)
+button.place(width = 100, height = 100, x = 15, y = 15)
+>>>>>>> e4a800e2b74965f438091e278135c0464a9c78e2
 
 
 
