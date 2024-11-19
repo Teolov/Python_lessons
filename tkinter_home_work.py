@@ -33,7 +33,6 @@ import random
 # Сделать игру найди кнопку, при нажатии на кнопку она перемещается в случайное место
 # по координатам , но не выходит за границы окна
 
-<<<<<<< HEAD
 # window = Tk()
 # window.title('finder')
 # w, h = 1000, 1000
@@ -68,8 +67,6 @@ import random
 # . Хранение общей выручки магазина;
 # . Ограничить количество товара в магазине
 
-=======
->>>>>>> e4a800e2b74965f438091e278135c0464a9c78e2
 window = Tk()
 window.title('finder')
 w, h = 1000, 1000
@@ -77,65 +74,82 @@ window.geometry(f"{w}x{h}+{(window.winfo_screenwidth()-w)//2}+{(window.winfo_scr
 window.config(bg = '#355aff')
 window.resizable(False, False)
 
-<<<<<<< HEAD
-spisok = []
-# функция считающая сумму и добавляющая её в лейб
-def summa():
-    label_sum.config(text = '1')
-# кнопка посчитать
-button_summa= Button(text= 'посчитать', command = summa)
-button_summa.place(width = 100, height = 115, x = 600, y = 15)
-# лейбл с суммой
-label_sum = Label(text = '', bg = '#da47b5')
-label_sum.place(width = 100, height = 115, x = 475, y = 15)
-# инпут 1 товара
+# инпут
 inp_1 = Entry()
-spisok.append(inp_1.get())
-print(spisok)
-def b_1():
-    inp_1.place(x=15 , y=80 , height=50 , width=100)
-# кнопка 1 товара (вызывает инпут)
-button_1= Button(text= 'гирлянда = 100р', command = b_1)
+inp_1.place(x=245 , y=80 , height=50 , width=215)
+
+# списки под каждый товар
+sps_1 = []
+sps_2 = []
+sps_3 = []
+sps_4 = []
+
+# функции добавления в каждый список по типу товара
+def add_1():
+    sps_1.append(int(inp_1.get()))
+    print(sps_1)
+    button_summa= Button(text= 'посчитать', bg = '#57ca5d', command = l)
+    button_summa.place(width = 100, height = 115, x = 590, y = 15)
+
+def add_2():
+    sps_2.append(int(inp_1.get()))
+    print(sps_2)
+    button_summa= Button(text= 'посчитать', bg = '#57ca5d', command = l)
+    button_summa.place(width = 100, height = 115, x = 590, y = 15)
+
+def add_3():
+    sps_3.append(int(inp_1.get()))
+    print(sps_3)
+    button_summa= Button(text= 'посчитать', bg = '#57ca5d', command = l)
+    button_summa.place(width = 100, height = 115, x = 590, y = 15)
+
+def add_4():
+    sps_4.append(int(inp_1.get()))
+    print(sps_4)
+    button_summa= Button(text= 'посчитать', bg = '#57ca5d', command = l)
+    button_summa.place(width = 100, height = 115, x = 590, y = 15)
+
+# СМЕНА ТОВАРОВ (подмена кнопок и лейблов)
+def tovar_1():
+    label_tovar = Label(text = 'введите кол-во гирлянд: ', bg = '#b9b9b9')
+    label_tovar.place(x=15 , y=80 , height=50 , width=215)
+    button_01 = Button(text = 'добавить', command = add_1, bg = '#632020')
+    button_01.place(width = 100, height = 115, x = 475, y = 15)
+def tovar_2():
+    label_tovar = Label(text = 'введите кол-во петард: ', bg = '#b9b9b9')
+    label_tovar.place(x=15 , y=80 , height=50 , width=215)
+    button_01 = Button(text = 'добавить', command = add_2, bg = '#632020')
+    button_01.place(width = 100, height = 115, x = 475, y = 15)
+def tovar_3():
+    label_tovar = Label(text = 'введите кол-во звезд: ', bg = '#b9b9b9')
+    label_tovar.place(x=15 , y=80 , height=50 , width=215)
+    button_01 = Button(text = 'добавить', command = add_3, bg = '#632020')
+    button_01.place(width = 100, height = 115, x = 475, y = 15)
+def tovar_4():
+    label_tovar = Label(text = 'введите кол-во елок: ', bg = '#b9b9b9')
+    label_tovar.place(x=15 , y=80 , height=50 , width=215)
+    button_01 = Button(text = 'добавить', command = add_4, bg = '#632020')
+    button_01.place(width = 100, height = 115, x = 475, y = 15)
+    
+
+# кнопка 1 товара
+button_1= Button(text= 'гирлянда = 100р', command = tovar_1)
 button_1.place(width = 100, height = 50, x = 15, y = 15)
-# инпут 2 товара
-inp_2 = Entry()
-def b_2():
-    inp_2.place(x=130 , y=80 , height=50 , width=100)
-# кнопка 2 товара (вызывает инпут)
-button_2= Button(text= 'петарда = 50р', command = b_2)
+# кнопка 2 товара 
+button_2= Button(text= 'петарда = 50р', command = tovar_2)
 button_2.place(width = 100, height = 50, x = 130, y = 15)
-# инпут 3 товара
-inp_3 = Entry()
-def b_3():
-    inp_3.place(x=245 , y=80 , height=50 , width=100)
-# кнопка 3 товара (вызывает инпут)
-button_3= Button(text= 'звезда = 75р', command = b_3)
+# кнопка 3 товара
+button_3= Button(text= 'звезда = 75р', command = tovar_3)
 button_3.place(width = 100, height = 50, x = 245, y = 15)
-# инпут 4 товара
-inp_4 = Entry()
-def b_4():
-    inp_4.place(x=360 , y=80 , height=50 , width=100)
-# кнопка 4 товара (вызывает инпут)
-button_4= Button(text= 'елка = 500р', command = b_4)
+# кнопка 4 товара
+button_4= Button(text= 'елка = 500р', command = tovar_4)
 button_4.place(width = 100, height = 50, x = 360, y = 15)
 
-=======
-def button_move():
-    button.place(x = random.randint(15,885), y = random.randint(15,885))
-    
-
-def random_color():
-    color = f'#{random.randrange(256**3):06x}'
-    button.config(bg = color)
-
-def button_changer():
-    button_move()
-    random_color()
-    
-button= Button(text= 'click on me', command = button_changer)
-button.place(width = 100, height = 100, x = 15, y = 15)
->>>>>>> e4a800e2b74965f438091e278135c0464a9c78e2
-
+# лейбл с суммой
+def l():
+    summa = (sum(sps_1) * 100)+(sum(sps_2) * 50)+(sum(sps_3) * 75)+(sum(sps_4) * 500)
+    label_sum = Label(text = f'{summa}₽', bg = '#da47b5')
+    label_sum.place(width = 100, height = 115, x = 705, y = 15)
 
 
 
