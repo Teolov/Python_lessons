@@ -189,6 +189,7 @@ def Restart():
     # Запускаем новый процесс
     subprocess.Popen([python, script_path] + sys.argv)
     Game_Window.destroy()
+    window.quit()
 
 btn = Button(window, text='restart', width=20, height=3, bd='0', command= Restart)
 btn.place(x=-50, y=-50)
@@ -294,12 +295,14 @@ def Enemy_Move():
         Game_Window.move(enemy_car_3, enemy_x, enemy_y)
 
 # что бы все было хорошо     
-while True:
-    window.update()
-    Enemy_Move()
-    Levels()
-    time.sleep(0.01)
+# Изменение цикла игры
+def game_loop():
+    if game_on:  # Проверка, если игра все еще идет
+        Enemy_Move()  # Двигаем врагов
+        Levels()  # Устанавливаем уровни
+        window.after(10, game_loop)  # Повторяем функцию через 10 мс
 
+# Запускаем игровой цикл
+window.after(10, game_loop)  # Запускаем цикл игры
 
-
-# window.mainloop()
+window.mainloop()  # Основной цикл tkinter
